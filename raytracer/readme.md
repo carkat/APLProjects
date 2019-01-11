@@ -9,11 +9,11 @@ Requires arcfide's compiler.
 
 3. Use the following code:
 
-ns←⎕NS⍬
+      ns←⎕NS⍬
 
       ]compile ns cd -af=cpu
 
-PCG
+      PCG
 
       cd.∆.Init
 
