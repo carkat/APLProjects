@@ -10,7 +10,11 @@ Requires arcfide's compiler.
 3. Use the following code:
 
 ns←⎕NS⍬
+
       ]compile ns cd -af=cpu
+
 PCG
+
       cd.∆.Init
+
       cd.∆.(Image Display≢) ray 800 600
