@@ -3,6 +3,8 @@
 
 ⍝ call genMaze with a positive integer
 ⍝ ex. genMaze 10
+
+     dirs ← ↓4 2 ⍴ 1 0 ¯1 0 0 1 0 ¯1                                               ⍝ cardinal directions from a cell x y
      ends ← {(1@(locs[2?≢locs←⍸∨/¨((⊃⍴⍵)=x)∨1=x←⍳⍴⍵]))⍵}                           ⍝ generate 2 random ends of the maze
  adjCells ← {(∧/¨((⊃⍴⍺)≥b)∧(0<b))/b←⍵+dirs}                                        ⍝ find cells adjacen to current cell
   getCell ← {0<≢emt←⍸0=⍵[cells←⍵ adjCells ⍺]:emt rand cells ⋄ ⍺(cells backtrack)⍵} ⍝ select the next cell, either a random empty cell
