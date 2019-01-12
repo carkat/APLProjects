@@ -1,5 +1,6 @@
 ⍝ Inspired by the jugalbandi snakes and ladders challenge
 ⍝ the game works by adding the dice throws to the player position to the mapping, if any
+⍝ TODO: generate the map dyanamically each game?
 ⍝ for a 10x10 game of 4 players
 ⍝ 10 game 4
 ⍝ output is the list of positions once a player has won
