@@ -37,3 +37,5 @@ p18v2    ← {⊃{⍺+2⌈/⍵}/rows}
 ily  ← {(0=400|⍵) ∨ ((0≠100|⍵) ∧ 0=4|⍵)}                     ⍝ is leap year?
   m  ← {31 (28+ily ⍵) 31 30 31 30 31 31 30 31 30 31}         ⍝ calandar months
  p19 ← {+/ 1= 12↓ ((+/ms) ⍴ 1⌽⍳7)[¯1↓ +\ 1,ms←∊m¨1899+⍳101]} ⍝ count sundays on the first of the month from 1901 to 2000
+
+p20 ← {+/{⍎⍵}¨⊃×big/⍳100} ⍝ sum the digits of !100
