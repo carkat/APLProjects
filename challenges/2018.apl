@@ -28,5 +28,15 @@ zod←'Monkey' 'Rooster' 'Dog' 'Pig' 'Rat' 'Ox' 'Tiger' 'Rabbit' 'Dragon' 'Snake
 dates←20 19 21 20 21 21 23 23 23 23 22 22
    p5←{m d←¯1 0+⍵ ⋄ wzod⊃⍨12|m-d<dates⊃⍨12|m}
    t5←(2 23) (10 31)
-   r4←'Pisces' 'Scorpio'
-   r4≡p5¨t5
+   r5←'Pisces' 'Scorpio'
+   r5≡p5¨t5
+
+
+'Unconditionally Shifty'
+p7←{((-×⍺)×≢⍵)↑(-⍺)↓⍵}
+t7←1 0 1 1 1 0 1 1
+⍝ 3 ({(×⍺)×≢⍵}↑↓) t7 ⍝ interesting train of the inverse of the solution, from Adam
+r7←(⊂0 0 0 1 0 1 1 1), ⊂1 1 0 1 1 0 0 0
+r7≡3 ¯3 p7¨⊂t7
+ ⍬≡5 p7 ⍬
+ 0≡3 p7 1
