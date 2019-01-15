@@ -33,7 +33,7 @@ dates←20 19 21 20 21 21 23 23 23 23 22 22
 
 
 'Unconditionally Shifty'
-p7←{((-×⍺)×≢⍵)↑(-⍺)↓⍵}
+p7←{((-×.5+⍺)×≢⍵)↑(-⍺)↓⍵} ⍝ .5 added to account for 0≡×0
 t7←1 0 1 1 1 0 1 1
 ⍝ 3 ({(×⍺)×≢⍵}↑↓) t7 ⍝ interesting train of the inverse of the solution, from Adam
 r7←(⊂0 0 0 1 0 1 1 1), ⊂1 1 0 1 1 0 0 0
