@@ -32,6 +32,12 @@ dates←20 19 21 20 21 21 23 23 23 23 22 22
    r5←'Pisces' 'Scorpio'
    r5≡p5¨t5
 
+'What''s Your Angle?'
+p6←{g←(⍵∊'<>')/⍵ ⋄ 0=2|c←≢g : (∧/⍣2)∊('<>'=a b) ∧ (≢b← g[h+1]) ≡ ≢a← g[ h← 2×⍳⌈c÷2 ] ⋄ 0}
+t6←'<name><first>Drake</first><last>Mallard</last></name>' '<math><relation>2<3</relation></math>' '' '>stuff<>/stuff<' '<' 
+r6←1 0 1 0 0
+r6≡p6¨t6
+
 'Unconditionally Shifty'
 p7←{((-×.5+⍺)×≢⍵)↑(-⍺)↓⍵} ⍝ .5 added to account for 0≡×0
 t7←1 0 1 1 1 0 1 1
@@ -44,7 +50,9 @@ r7≡3 ¯3 p7¨⊂t7
 ⎕IO←1
 
 'Making a Good Argument'
-p8←{n←≢⍺⋄(n≡+/⍺∊⍳⍴⍴⍵)∧((≢∪⍺)≡≢a∧(a←∪⍳⌈/⍺)∊⍺)∧n≡≢⍴⍵}
+⍝p8←{n←≢⍺⋄(n≡+/⍺∊⍳⍴⍴⍵)∧((≢∪⍺)≡≢a∧(a←∪⍳⌈/⍺)∊⍺)∧n≡≢⍴⍵} ⍝ doesn't solve ⍺≡⍬
+⍝p8←{n←≢⍺ ⋄ ((∧/⍣2) (⍳⊃(,⍺)[⍒,⍺]) ∊ ⍺) ∧ n≡≢⍴⍵}      ⍝ solves all test inputs
+p8←{(∧/(⍳≢∪⍺)∊∪⍺) ∧ (≢⍺)≡≢⍴⍵}                        ⍝ after talking with Adam
 as←(3 1 2) (2 1 2) (2 3 2) (1 1) (1 2) (1.1 2 3) 1
 o1←2 3 4⍴⍳24
 o2←3 4⍴⍳12
