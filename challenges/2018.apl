@@ -51,7 +51,7 @@ r7≡3 ¯3 p7¨⊂t7
 
 'Making a Good Argument'
 ⍝p8←{n←≢⍺⋄(n≡+/⍺∊⍳⍴⍴⍵)∧((≢∪⍺)≡≢a∧(a←∪⍳⌈/⍺)∊⍺)∧n≡≢⍴⍵} ⍝ doesn't solve ⍺≡⍬
-⍝p8←{n←≢⍺ ⋄ ((∧/⍣2) (⍳⊃(,⍺)[⍒,⍺]) ∊ ⍺) ∧ n≡≢⍴⍵}      ⍝ solves all test inputs
+⍝p8←{((∧/⍣2) (⍳⊃(,⍺)[⍒,⍺]) ∊ ⍺) ∧ (≢⍺)≡≢⍴⍵}          ⍝ solves all test inputs
 p8←{(∧/(⍳≢∪⍺)∊∪⍺) ∧ (≢⍺)≡≢⍴⍵}                        ⍝ after talking with Adam
 as←(3 1 2) (2 1 2) (2 3 2) (1 1) (1 2) (1.1 2 3) 1
 o1←2 3 4⍴⍳24
