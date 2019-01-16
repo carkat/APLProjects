@@ -7,7 +7,8 @@ p1 ← {+/⍸∨/¨0=(⊂3 5)|¨⍳999}                       ⍝ sum of n≤100
 p2 ← {+/(0=2|a)/a←({⍵,+/¯2↑⍵}⍣(4000000<¯1↑⊣))1 1} ⍝ sum of even fib ns ≤ 4e6
 p3 ← {⊃⌽factors 600851475143}                     ⍝ largest factor of a given number
 p4 ← {⊃⌽∊{((⊂b)≡⊂⌽b←⍕⍵)/⍵}¨a[⍋a←∊∘.×⍨100+⍳899]}   ⍝ largest 3 digit product palendromic number 
-p5 ← {⎕IO←1⋄{(⍺×⍵)÷⍺{⍵=0:⍺ ⋄ ⍵ ∇ ⍵|⍺}⍵}/⍳20}      ⍝ range(20).reduce(lcm)
+⍝p5 ← {⎕IO←1⋄{(⍺×⍵)÷⍺{⍵=0:⍺ ⋄ ⍵ ∇ ⍵|⍺}⍵}/⍳20}      ⍝ range(20).reduce(lcm)
+p5 ← {⎕IO←1⋄∧/⍳20} ⍝ lcm / 1 2 3 ... 20
 p6 ← {{((+/⍵)*2)-+/⍵*2}⍳100}                      ⍝ difference of the square of sum and sum of square
 p7 ← {pco 10001}                                  ⍝ nth prime
 n  ← ⊃⎕NGET './problem8.txt'                      ⍝ replace with the appropriate path to ./problem8.txt
