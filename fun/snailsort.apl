@@ -35,4 +35,7 @@ s2←{
 }
 
 ⍝ s2 in one line
-s3←{ n ← 1↑⍴⍵ ⋄ (∊⍵)[+\∊ {i x←⍵ ⋄ x/ (1 n ¯1 (-n))[ 1+4|i-1 ]}¨ ↓⍉↑ (⊂⍳⍴a),⊂a← 1↓⌽ 2/ ⍳n]}
+s3←{ n ← 1↑⍴⍵ ⋄ (∊⍵)[+\∊ {i x←⍵ ⋄ x/ (1+4|i-1)⌷ 1 n ¯1 (-n)}¨ ↓⍉↑ (⊂⍳⍴a),⊂a← 1↓⌽ 2/ ⍳n]}
+
+⍝ s2 without ¨ , simply replicates each as needed accross the list
+s4←{n←1↑ ⍴⍵ ⋄ a←1↓ ⌽ 2/ ⍳n ⋄ (∊⍵)[ +\∊ a/ (⍴a) ⍴ 1 n ¯1(-n) ]}
