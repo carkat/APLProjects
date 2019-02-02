@@ -6,6 +6,10 @@ snailsort←{0<+/⍴⍵:⍵[1;],∇⊖⍉⍵[1↓⍳1↑⍴⍵;]⋄⍬}
 snailsort 4 4⍴⍳16
 
 
+⍝ generic version of snail sort
+⍝ sorts any matrix in the shape of a snail
+⍝ s 4 4⍴'abcd' → abcddddbcaaabccb
+⍝ s 3 3⍴⍳9     → 1 2 3 6 9 8 7 4 5   
  s←{                                             
      imat    ← (⍴mat) ⍴⍳ ≢∊⍵                              ⍝ an index matrix
      n       ← 1↑⍴⍵                                       ⍝ get the size of the first dimension
