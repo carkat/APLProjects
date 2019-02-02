@@ -33,3 +33,6 @@ s2←{
   indices   ← +\∊ maneuvers¨ ↓⍉↑ (⊂⍳⍴takes),⊂takes  ⍝ the snail sorted indices
   (∊⍵)[indices]                                     ⍝ the snail sorted values
 }
+
+⍝ s2 in one line
+s3←{ n ← 1↑⍴⍵ ⋄ (∊⍵)[+\∊ {i x←⍵ ⋄ x/ (1 n ¯1 (-n))[ 1+4|i-1 ]}¨ ↓⍉↑ (⊂⍳⍴a),⊂a← 1↓⌽ 2/ ⍳n]}
